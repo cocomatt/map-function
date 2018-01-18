@@ -1,11 +1,11 @@
 var words = ["ground", "control", "to", "major", "tom"];
 
 function map(list, cb) {
-  var new_words = [];
-  for (var i = 0; i < words.length; i++) {
-    new_words.push(cb(words[i], list));
-  }
-  return new_words;
+  var newWords = [];
+  words.forEach(function(element, i) {
+    newWords.push(cb(words[i], list))
+  });
+  return newWords;
 }
 
 var result = map(words, function(word) {
